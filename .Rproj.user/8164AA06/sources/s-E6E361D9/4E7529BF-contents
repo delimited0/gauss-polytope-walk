@@ -1,0 +1,10 @@
+d <- 2
+lb <- rep(-4, d)
+ub <- rep(4, d)
+A <- rbind(-diag(d), diag(d))
+b <- c(-lb, ub)
+n <- 10000
+
+samples <- gausspolytopewalk::generate_vaidya_samples(n, c(0, 0), A, b, 2)
+
+plot(t(samples))
