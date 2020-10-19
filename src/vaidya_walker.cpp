@@ -1,4 +1,5 @@
 #include "vaidya_walker.hpp"
+#include "math_util.h"
 
 bool VaidyaWalker::do_sample(arma::vec & new_sample, const double lazy) {
   proposal(new_sample);
@@ -56,6 +57,7 @@ bool VaidyaWalker::accept_reject_reverse(const arma::vec & new_sample) {
 
 void VaidyaWalker::sqrt_inv_hess_barrier(const arma::vec & new_sample, 
                                          arma::mat & new_sqrt_inv_hess) {
+  
   arma::vec inv_slack = 1 / (this->b - this->A * new_sample);
   
   arma::mat half_hess = arma::diagmat(inv_slack) * this->A;
@@ -81,17 +83,21 @@ void VaidyaWalker::sqrt_inv_hess_barrier(const arma::vec & new_sample,
 }
 
 // [[Rcpp::export]]
-arma::mat generate_vaidya_samples(const int n, const arma::vec & initial, 
+arma::mat generate_vaidya_samples(const int n, int burnin, const arma::vec & initial, 
                                   const arma::mat & A, const arma::vec & b, 
-                                  const double r) {
+                                  const double r, double lazy) {
   
   arma::mat samples(A.n_cols, n);
   VaidyaWalker vaidyaw = VaidyaWalker(initial, A, b, r);
   
   arma::vec new_sample = arma::zeros(A.n_cols);
-  
+
+  for (int i = 0; i < burnin; i++) {
+    vaidyaw.do_sample(new_sample, lazy);
+  }
+    
   for (int i = 0; i < n; i++) {
-    vaidyaw.do_sample(new_sample);
+    vaidyaw.do_sample(new_sample, lazy);
     samples.col(i) = new_sample;
   }
   

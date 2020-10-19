@@ -6,24 +6,44 @@
 
 using namespace Rcpp;
 
-// generate_vaidya_samples
-arma::mat generate_vaidya_samples(const int n, const arma::vec& initial, const arma::mat& A, const arma::vec& b, const double r);
-RcppExport SEXP _gausspolytopewalk_generate_vaidya_samples(SEXP nSEXP, SEXP initialSEXP, SEXP ASEXP, SEXP bSEXP, SEXP rSEXP) {
+// generate_john_samples
+arma::mat generate_john_samples(const int n, int burnin, const arma::vec& initial, const arma::mat& A, const arma::vec& b, const double r, double lazy);
+RcppExport SEXP _gausspolytopewalk_generate_john_samples(SEXP nSEXP, SEXP burninSEXP, SEXP initialSEXP, SEXP ASEXP, SEXP bSEXP, SEXP rSEXP, SEXP lazySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type burnin(burninSEXP);
     Rcpp::traits::input_parameter< const arma::vec& >::type initial(initialSEXP);
     Rcpp::traits::input_parameter< const arma::mat& >::type A(ASEXP);
     Rcpp::traits::input_parameter< const arma::vec& >::type b(bSEXP);
     Rcpp::traits::input_parameter< const double >::type r(rSEXP);
-    rcpp_result_gen = Rcpp::wrap(generate_vaidya_samples(n, initial, A, b, r));
+    Rcpp::traits::input_parameter< double >::type lazy(lazySEXP);
+    rcpp_result_gen = Rcpp::wrap(generate_john_samples(n, burnin, initial, A, b, r, lazy));
+    return rcpp_result_gen;
+END_RCPP
+}
+// generate_vaidya_samples
+arma::mat generate_vaidya_samples(const int n, int burnin, const arma::vec& initial, const arma::mat& A, const arma::vec& b, const double r, double lazy);
+RcppExport SEXP _gausspolytopewalk_generate_vaidya_samples(SEXP nSEXP, SEXP burninSEXP, SEXP initialSEXP, SEXP ASEXP, SEXP bSEXP, SEXP rSEXP, SEXP lazySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type burnin(burninSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type initial(initialSEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type A(ASEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type b(bSEXP);
+    Rcpp::traits::input_parameter< const double >::type r(rSEXP);
+    Rcpp::traits::input_parameter< double >::type lazy(lazySEXP);
+    rcpp_result_gen = Rcpp::wrap(generate_vaidya_samples(n, burnin, initial, A, b, r, lazy));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_gausspolytopewalk_generate_vaidya_samples", (DL_FUNC) &_gausspolytopewalk_generate_vaidya_samples, 5},
+    {"_gausspolytopewalk_generate_john_samples", (DL_FUNC) &_gausspolytopewalk_generate_john_samples, 7},
+    {"_gausspolytopewalk_generate_vaidya_samples", (DL_FUNC) &_gausspolytopewalk_generate_vaidya_samples, 7},
     {NULL, NULL, 0}
 };
 

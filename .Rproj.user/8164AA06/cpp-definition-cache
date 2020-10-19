@@ -1,7 +1,111 @@
 [
     {
+        "file": "/home/patrick/Research/gausspolytopewalk/src/john_walker.cpp",
+        "file_last_write": 1603074085.0,
+        "definitions": [
+            {
+                "usr": "c:@S@JohnWalker@F@do_sample#&$@N@arma@S@Col>#d#1d#",
+                "kind": 7,
+                "parent_name": "JohnWalker",
+                "name": "do_sample(arma::vec &, const double)",
+                "file": "/home/patrick/Research/gausspolytopewalk/src/john_walker.cpp",
+                "line": 4,
+                "column": 18
+            },
+            {
+                "usr": "c:@S@JohnWalker@F@proposal#&$@N@arma@S@Col>#d#",
+                "kind": 7,
+                "parent_name": "JohnWalker",
+                "name": "proposal(arma::vec &)",
+                "file": "/home/patrick/Research/gausspolytopewalk/src/john_walker.cpp",
+                "line": 20,
+                "column": 18
+            },
+            {
+                "usr": "c:@S@JohnWalker@F@accept_reject_reverse#&1$@N@arma@S@Col>#d#",
+                "kind": 7,
+                "parent_name": "JohnWalker",
+                "name": "accept_reject_reverse(const arma::vec &)",
+                "file": "/home/patrick/Research/gausspolytopewalk/src/john_walker.cpp",
+                "line": 31,
+                "column": 18
+            },
+            {
+                "usr": "c:@S@JohnWalker@F@sqrt_inv_hess_barrier#&1$@N@arma@S@Col>#d#&$@N@arma@S@Mat>#d#",
+                "kind": 7,
+                "parent_name": "JohnWalker",
+                "name": "sqrt_inv_hess_barrier(const arma::vec &, arma::mat &)",
+                "file": "/home/patrick/Research/gausspolytopewalk/src/john_walker.cpp",
+                "line": 57,
+                "column": 18
+            },
+            {
+                "usr": "c:@F@generate_john_samples#1I#I#&1$@N@arma@S@Col>#d#&1$@N@arma@S@Mat>#d#S0_#1d#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "generate_john_samples(const int, int, const arma::vec &, const arma::mat &, const arma::vec &, const double, double)",
+                "file": "/home/patrick/Research/gausspolytopewalk/src/john_walker.cpp",
+                "line": 104,
+                "column": 11
+            }
+        ]
+    },
+    {
+        "file": "/home/patrick/Research/gausspolytopewalk/src/john_walker.hpp",
+        "file_last_write": 1603071857.0,
+        "definitions": [
+            {
+                "usr": "c:@S@JohnWalker",
+                "kind": 2,
+                "parent_name": "",
+                "name": "JohnWalker",
+                "file": "/home/patrick/Research/gausspolytopewalk/src/john_walker.hpp",
+                "line": 6,
+                "column": 7
+            },
+            {
+                "usr": "c:@S@JohnWalker@F@get_radius#",
+                "kind": 7,
+                "parent_name": "JohnWalker",
+                "name": "get_radius",
+                "file": "/home/patrick/Research/gausspolytopewalk/src/john_walker.hpp",
+                "line": 14,
+                "column": 10
+            }
+        ]
+    },
+    {
+        "file": "/home/patrick/Research/gausspolytopewalk/src/math_util.cpp",
+        "file_last_write": 1603071252.0,
+        "definitions": [
+            {
+                "usr": "c:@F@gaussian_density#&1$@N@arma@S@Col>#d#S0_#&1$@N@arma@S@Mat>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gaussian_density(const arma::vec &, const arma::vec &, const arma::mat &)",
+                "file": "/home/patrick/Research/gausspolytopewalk/src/math_util.cpp",
+                "line": 3,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@gaussian_density_ratio#&1$@N@arma@S@Col>#d#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gaussian_density_ratio(const arma::vec &, const arma::vec &)",
+                "file": "/home/patrick/Research/gausspolytopewalk/src/math_util.cpp",
+                "line": 14,
+                "column": 8
+            }
+        ]
+    },
+    {
+        "file": "/home/patrick/Research/gausspolytopewalk/src/math_util.h",
+        "file_last_write": 1603071346.0,
+        "definitions": []
+    },
+    {
         "file": "/home/patrick/Research/gausspolytopewalk/src/vaidya_walker.cpp",
-        "file_last_write": 1602802842.0,
+        "file_last_write": 1603074047.0,
         "definitions": [
             {
                 "usr": "c:@S@VaidyaWalker@F@do_sample#&$@N@arma@S@Col>#d#1d#",
@@ -9,7 +113,7 @@
                 "parent_name": "VaidyaWalker",
                 "name": "do_sample(arma::vec &, const double)",
                 "file": "/home/patrick/Research/gausspolytopewalk/src/vaidya_walker.cpp",
-                "line": 3,
+                "line": 4,
                 "column": 20
             },
             {
@@ -18,7 +122,7 @@
                 "parent_name": "VaidyaWalker",
                 "name": "proposal(arma::vec &)",
                 "file": "/home/patrick/Research/gausspolytopewalk/src/vaidya_walker.cpp",
-                "line": 19,
+                "line": 20,
                 "column": 20
             },
             {
@@ -27,7 +131,7 @@
                 "parent_name": "VaidyaWalker",
                 "name": "accept_reject_reverse(const arma::vec &)",
                 "file": "/home/patrick/Research/gausspolytopewalk/src/vaidya_walker.cpp",
-                "line": 31,
+                "line": 32,
                 "column": 20
             },
             {
@@ -36,16 +140,16 @@
                 "parent_name": "VaidyaWalker",
                 "name": "sqrt_inv_hess_barrier(const arma::vec &, arma::mat &)",
                 "file": "/home/patrick/Research/gausspolytopewalk/src/vaidya_walker.cpp",
-                "line": 57,
+                "line": 58,
                 "column": 20
             },
             {
-                "usr": "c:@F@generate_vaidya_samples#1I#&1$@N@arma@S@Col>#d#&1$@N@arma@S@Mat>#d#S0_#1d#",
+                "usr": "c:@F@generate_vaidya_samples#1I#I#&1$@N@arma@S@Col>#d#&1$@N@arma@S@Mat>#d#S0_#1d#d#",
                 "kind": 6,
                 "parent_name": "",
-                "name": "generate_vaidya_samples(const int, const arma::vec &, const arma::mat &, const arma::vec &, const double)",
+                "name": "generate_vaidya_samples(const int, int, const arma::vec &, const arma::mat &, const arma::vec &, const double, double)",
                 "file": "/home/patrick/Research/gausspolytopewalk/src/vaidya_walker.cpp",
-                "line": 84,
+                "line": 86,
                 "column": 11
             }
         ]
@@ -76,7 +180,7 @@
     },
     {
         "file": "/home/patrick/Research/gausspolytopewalk/src/walker.hpp",
-        "file_last_write": 1602802657.0,
+        "file_last_write": 1603071082.0,
         "definitions": [
             {
                 "usr": "c:@S@Walker",
@@ -103,24 +207,6 @@
                 "name": "check_in_polytope(const arma::vec &)",
                 "file": "/home/patrick/Research/gausspolytopewalk/src/walker.hpp",
                 "line": 20,
-                "column": 8
-            },
-            {
-                "usr": "c:@F@gaussian_density#&1$@N@arma@S@Col>#d#S0_#&1$@N@arma@S@Mat>#d#",
-                "kind": 6,
-                "parent_name": "",
-                "name": "gaussian_density(const arma::vec &, const arma::vec &, const arma::mat &)",
-                "file": "/home/patrick/Research/gausspolytopewalk/src/walker.hpp",
-                "line": 35,
-                "column": 8
-            },
-            {
-                "usr": "c:@F@gaussian_density_ratio#&1$@N@arma@S@Col>#d#S0_#",
-                "kind": 6,
-                "parent_name": "",
-                "name": "gaussian_density_ratio(const arma::vec &, const arma::vec &)",
-                "file": "/home/patrick/Research/gausspolytopewalk/src/walker.hpp",
-                "line": 46,
                 "column": 8
             }
         ]
